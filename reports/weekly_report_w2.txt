@@ -1,0 +1,22 @@
+#Báo cáo nhóm 19
+
+# Mô tả công việc tuần
+-Thiết kế mySQL chứa thông tin các trường đại học trên địa bàn hà nội
+-Liên kết mySQL với HTML bằng Python
+
+## Vấn đề gặp phải
+
+- Chưa thiết kế được backend
+- đang trong quá trình hoàn thiện thêm các tính năng khác
+
+# Báo cáo của thành viên
+
+## Nguyễn Minh Quân
+- thiết kế mySQL
+- Liên kết mySQL với HTML qua python
+
+##Dương Phúc Quốc
+-Tìm logo, mã các trường đại học
+
+## Bùi Trần Việt Hoàng
+-Đang làm tính năng chat

@@ -1,0 +1,73 @@
+'PKA', 'Trường Đại học Phenikaa', 'cmt'
+'BKA', 'Trường Đại học Bách Khoa Hà Nội', 'cmt'
+'MHN', 'Trường Đại học mở Hà Nội', NULL
+'QH', 'Trường Đại học Quốc gia Hà Nội', NULL
+'QHI', 'Trường Đại học Công nghệ – Đại học Quốc gia Hà Nội', NULL
+'QHT', 'Trường ĐH Khoa học Tự nhiên – Đại học Quốc gia Hà Nội', NULL
+'QHX', 'Trường ĐH Khoa học Xã hội và Nhân văn – ĐH Quốc gia Hà Nội', NULL
+'QHE', 'Trường Đại học Kinh tế – Đại học Quốc gia Hà Nội', NULL
+'QHF', '	Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội', NULL
+'QHL', 'Khoa Luật – Đại học Quốc gia Hà Nội', NULL
+'QHS', 'Trường ĐH Giáo dục – Đại học Quốc gia Hà Nội', NULL
+'QHY', 'Khoa Y Dược – Đại học Quốc gia Hà Nội', NULL
+'QHQ	', 'Khoa Quốc tế – Đại học Quốc gia Hà Nội', NULL
+'QHJ	', 'Trường Đại học Việt Nhật – Đại học Quốc gia Hà Nội', NULL
+'NVH	', 'Học viện Âm nhạc Quốc gia Việt Nam', NULL
+'TGC	', 'Học viện Báo chí và Tuyên truyền', NULL
+'HCP	', 'Học viện Chính sách và Phát triển', NULL
+'BVH	', 'Học viện Công nghệ Bưu chính Viễn thông', NULL
+'KMA	', 'Học viện Kỹ thuật Mật mã', NULL
+'NHH	', 'Học viện Ngân hàng', NULL
+'HQT	', 'Học viện Ngoại giao', NULL
+'HVN	', 'Học viện Nông nghiệp Việt Nam', NULL
+'HPN	', 'Học viện Phụ nữ Việt Nam', NULL
+'HVQ', 'Học viện Quản lý Giáo dục', NULL
+'HTC	', 'Học viện Tài chính', NULL
+'HTN	', 'Học viện Thanh Thiếu niên Việt Nam', NULL
+'HTA	', 'Học viện Tòa án', NULL
+'HYD	', 'Học viện Y Dược học cổ truyền Việt Nam', NULL
+'LDA	', 'Trường Đại học Công đoàn', NULL
+'GTA	', 'Trường Đại học Công nghệ Giao thông vận tải', NULL
+'CCM	', 'Trường Đại học Công nghiệp Dệt may Hà Nội', NULL
+'VHD	', 'Trường Đại học Công nghiệp Việt Hung', NULL
+'DKH', 'Trường Đại học Dược Hà Nội', NULL
+'DDL	', 'Trường Đại học Điện lực', NULL
+'GHA	', 'Trường Đại học Giao thông vận tải', NULL
+'NHF	', 'Trường Đại học Hà Nội', NULL
+'KCN	', 'Trường Đại học Khoa học và Công nghệ Hà Nội', NULL
+'DKK	', 'Trường Đại học Kinh tế Kỹ thuật Công nghiệp', NULL
+'KHA	', 'Trường Đại học Kinh tế Quốc dân', NULL
+'DKS	', 'Trường Đại học Kiểm sát Hà Nội', NULL
+'KTA	', 'Trường Đại học Kiến trúc Hà Nội', NULL
+'DLX	', 'Trường Đại học Lao động Xã hội', NULL
+'LNH	', 'Trường Đại học Lâm nghiệp', NULL
+'LPH	', 'Trường Đại học Luật Hà Nội', NULL
+'MDA', 'Trường Đại học Mỏ Địa chất Hà Nội', NULL
+'MTC', 'Trường Đại học Mỹ thuật Công nghiệp', NULL
+'MCA', 'Trường Đại học Mỹ thuật Công nghiệp Á Châu', NULL
+'MTH', '	Trường Đại học Mỹ thuật Việt Nam', NULL
+'NTH', 'Trường Đại học Ngoại thương', NULL
+'DNV', 'Trường Đại học Nội vụ Hà Nội', NULL
+'SKD	', 'Trường Đại học Sân khấu Điện ảnh', NULL
+'SPH	', 'Trường Đại học Sư phạm Hà Nội', NULL
+'GNT	', 'Trường Đại học Sư phạm Nghệ thuật Trung ương Hà Nội', NULL
+'TDH	', 'Trường Đại học Sư phạm Thể dục thể thao Hà nội', NULL
+'DMT	', 'Trường Đại học Tài nguyên và Môi trường Hà Nội', NULL
+'C01	', 'Trường Đại học Thủ đô Hà Nội', NULL
+'TLA', 'Trường Đại học Thủy lợi', NULL
+'TMA	', 'Trường Đại học Thương mại', NULL
+'VHH	', 'Trường Đại học Văn hóa Hà Nội', NULL
+'XDA', 'Trường Đại học Xây dựng', NULL
+'YHB', 'Trường Đại học Y Hà Nội', NULL
+'YTC', 'Trường Đại học Y tế Công cộng', NULL
+'DDU', 'Trường Đại học Đông Đô', NULL
+'DPD', 'Trường Đại học Phương Đông', NULL
+'DTL', 'Trường Đại học Thăng Long', NULL
+'DDN', 'Trường Đại học Đại Nam ', NULL
+'FPT', 'Trường Đại học FPT', NULL
+'HBU', 'Trường Đại học Hòa Bình', NULL
+'DQK', 'Trường Đại học Kinh doanh và Công nghệ Hà Nội ', NULL
+'NTU	', 'Trường Đại học Nguyễn Trãi ', NULL
+'FBU', 'Trường Đại học Tài chính Ngân hàng Hà Nội', NULL
+'TDD', 'Trường Đại học Thành Đô', NULL
+'DCQ', 'Trường Đại học Công nghệ và Quản lý Hữu nghị', NULL
