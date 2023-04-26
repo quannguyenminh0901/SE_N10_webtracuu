@@ -27,44 +27,13 @@
 					<span class="text">Home</span>
 				</a>
 			</li>
-			<li>
-				<a href="#">
-					<i class='bx bxs-shopping-bag-alt' ></i>
-					<span class="text">My Store</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class='bx bxs-doughnut-chart' ></i>
-					<span class="text">Analytics</span>
-				</a>
-			</li>
 			<li class="active">
 				<a href="#">
 					<i class='bx bxs-message-dots' ></i>
 					<span class="text">Message</span>
 				</a>
 			</li>
-			<li>
-				<a href="#">
-					<i class='bx bxs-group' ></i>
-					<span class="text">Team</span>
-				</a>
-			</li>
-		</ul>
-		<ul class="side-menu">
-			<li>
-				<a href="#">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Settings</span>
-				</a>
-			</li>
-			<li>
-				<a href="#" class="logout">
-					<i class='bx bxs-log-out-circle' ></i>
-					<span class="text">Logout</span>
-				</a>
-			</li>
+			
 		</ul>
 	</section>
 	<!-- SIDEBAR -->
@@ -110,59 +79,64 @@
 						</li>
 					</ul>
 				</div>
+				<a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a>
 			</div>
 
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<h3>Top lựa chọn hàng đầu của sinh viên</h3>
+						
 						<i class='bx bx-search' ></i>
 						<i class='bx bx-filter' ></i>
 					</div>
 					<table>
 						<thead>
 							<tr>
-								<th>School</th>
-								<th>Address</th>
-								<th>Information</th>
+								
 							</tr>
 						</thead>
 						<tbody>
-							
+					
+							<button class="nut-mo-chatbox" onclick="moForm()">Chat</button>
+								<div class="Chatbox" id="myForm">
+  									<form action="" class="form-container">	
+    								<h1>Chatbox</h1>
+
+    								<label for="msg"><b>Lời Nhắn</b></label>
+    								<textarea placeholder="Bạn hãy nhập lời nhắn.." name="msg" required></textarea>
+
+    								<button type="submit" class="btn">Gửi</button>
+   									<button type="button" class="btn nut-dong-chatbox" onclick="dongForm()">Đóng</button>
+									
+							<div class="chat-message">
+								<span class="message-text">Xin chào! Tôi có thể giúp gì cho bạn?</span>
+								<span class="message-time">9:00 AM</span>
+							  </div>
+							  
+							  <div class="chat-message">
+								<span class="message-text">Tôi muốn biết về sản phẩm của bạn.</span>
+								<span class="message-time">9:02 AM</span>
+							  </div>
+							  
+							<form>
+								
+								</form>
+									</div>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													
+							  </form>
 						</tbody>
 					</table>
 				</div>
-				<div class="todo">
-					<div class="head">
-						<h3>Todos</h3>
-						<i class='bx bx-plus' ></i>
-						<i class='bx bx-filter' ></i>
-					</div>
-					<ul class="todo-list">
-						<li class="completed">
-							<p>Tư vấn tuyển sinh</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Chat với khách hàng</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Phản hồi của khách hàng</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Lựa chọn hàng đầu</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-					</ul>
-				</div>
+				
 			</div>
 		</main>
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
-	
+
 
 	<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>

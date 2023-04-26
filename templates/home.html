@@ -24,14 +24,14 @@
 		<ul class   ="side-menu top">
 			<li class="active">
 				<a href="#">
-					<i class='bx bxs-dashboard' ></i>
+					<i class='bx bxs-dashboard' class='bxs-dashboard'></i>
 					<span class="text">Home</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
-					<i class='bx bxs-shopping-bag-alt' ></i>
-					<span class="text">My Store</span>
+				<a href="{{url_for('images')}}">
+					<i class='bx bxs-image' ></i>
+					<span class="text">My School</span>
 				</a>
 			</li>
 			<li>
@@ -41,13 +41,13 @@
 				</a>
 			</li>
 			<li>
-				<a href="{{url_for('chat')}}">
-					<i class='bx bxs-message-dots' ></i>
+				<a href="{{url_for('chat')}}" >
+					<i class='bx bxs-message-dots'></i>
 					<span class="text">Message</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="">
 					<i class='bx bxs-group' ></i>
 					<span class="text">Team</span>
 				</a>
@@ -61,7 +61,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#" class="logout">
+				<a href="{{url_for('login')}}" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
 					<span class="text">Logout</span>
 				</a>
@@ -91,7 +91,7 @@
 				<span class="num">999</span>
 			</a>
 			<a href="#" class="profile">
-				<img src="{{ url_for('static', filename='img/1.png') }}">
+				<img src="{{ url_for('static', filename='img/1.jpg') }}">
 			</a>
 		</nav>
 		<!-- NAVBAR -->
@@ -171,8 +171,6 @@
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
-	
-
 	<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
