@@ -8,8 +8,8 @@
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-	<title>Home</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='img/logo.png') }}" />
+	<title>University Search</title>
 </head>
 <body>
 
@@ -24,20 +24,14 @@
 		<ul class   ="side-menu top">
 			<li class="active">
 				<a href="#">
-					<i class='bx bxs-dashboard' class='bxs-dashboard'></i>
+					<i class='bx bxs-dashboard'></i>
 					<span class="text">Home</span>
 				</a>
 			</li>
 			<li>
-				<a href="{{url_for('images')}}">
+				<a href="{{url_for('image')}}">
 					<i class='bx bxs-image' ></i>
 					<span class="text">My School</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class='bx bxs-doughnut-chart' ></i>
-					<span class="text">Analytics</span>
 				</a>
 			</li>
 			<li>
@@ -47,7 +41,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="">
+				<a href="{{url_for('team')}}">
 					<i class='bx bxs-group' ></i>
 					<span class="text">Team</span>
 				</a>
@@ -61,7 +55,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="{{url_for('login')}}" class="logout">
+				<a href="{{url_for('index')}}" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
 					<span class="text">Logout</span>
 				</a>
@@ -80,7 +74,7 @@
 			<a href="#" class="nav-link">Categories</a>
 			<form action="#">
 				<div class="form-input">
-					<input type="search" placeholder="Search...">
+					<input type="text" name="search_term" placeholder=". . .">
 					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
 				</div>
 			</form>
@@ -91,7 +85,7 @@
 				<span class="num">999</span>
 			</a>
 			<a href="#" class="profile">
-				<img src="{{ url_for('static', filename='img/1.jpg') }}">
+				<img src="{{ url_for('static', filename='img/logo.png') }}">
 			</a>
 		</nav>
 		<!-- NAVBAR -->
@@ -100,14 +94,14 @@
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Home</h1>
+					<h1 >Home</h1>
 					<ul class="breadcrumb">
 						<li>
 							<a href="#">Dashboard</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Home</a>
+							<a class="active" href="#" >Home</a>
 						</li>
 					</ul>
 				</div>
@@ -119,10 +113,10 @@
 
 			<ul class="box-info">
 				<li>
-					<i class='bx bxs-calendar-check' ></i>
+					<i class='bx bxs-school' ></i>
 					<span class="text">
-						<h3>1020</h3>
-						<p>New Order</p>
+						<h3>92</h3>
+						<p>Trường Đại học & Học viện</p>
 					</span>
 				</li>
 				<li>
@@ -145,9 +139,24 @@
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<h3>Các trường đại học trên địa bàn Hà Nội</h3>
-						<i class='bx bx-search' ></i>
-						<i class='bx bx-filter' ></i>
+						<h3>Danh sách trường đại học tại Hà Nội</h3>
+						<form action="{{ url_for('search') }}" method="post">
+							<div class="form-input">
+								<input type="text" name="search_term" placeholder="Search...">
+								<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+							</div>
+						</form>
+							<form action="{{ url_for('filter')}}" method="post">
+								<div class="form-input">
+									<select name="loaiTruong">
+										<option value="">Chọn loại Trường</option>
+										<option value="Quân sự">Quân sự</option>
+										<option value="Dân lập">Dân lập</option>
+										<option value="Công lập">Công lập</option>
+									</select>
+									<button type="submit" class="filter-btn"><i class='bx bx-filter'></i></button>
+								</div>
+							</form>		
 					</div>
 					<table>
 						<thead>
@@ -162,7 +171,9 @@
             					<tr>
                 				<td>{{ i.maTruong }}</td>
                 				<td>{{ i.tenTruong }}</td>
-                				<td>{{ i.linkaccess }}</td>
+                				<td><button class="btn-link" onclick="window.open('{{ i.linkaccess }}', '_blank')">Mở liên kết</button>
+								</td>
+								</tr>
 							{% endfor %}
 						</tbody>
 					</table>

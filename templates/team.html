@@ -2,8 +2,13 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+		<link
+			rel="shortcut icon"
+			href="{{ url_for('static', filename='img/logo.png') }}"
+		/>
+		<title>University Search</title>
 		<!-- Boxicons -->
 		<link
 			href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
@@ -14,12 +19,6 @@
 			rel="stylesheet"
 			href="{{ url_for('static', filename='style.css') }}"
 		/>
-
-		<link
-			rel="shortcut icon"
-			href="{{ url_for('static', filename='img/logo.png') }}"
-		/>
-		<title>University Search</title>
 	</head>
 	<body>
 		<!-- SIDEBAR -->
@@ -32,14 +31,14 @@
 			<ul class="side-menu top">
 				<li>
 					<a href="{{url_for('home')}}">
-						<i class="bx bxs-dashboard" class="bxs-dashboard"></i>
+						<i class="bx bxs-dashboard"></i>
 						<span class="text">Home</span>
 					</a>
 				</li>
 				<li class="active">
 					<a href="#">
-						<i class="bx bxs-image"></i>
-						<span class="text">My School</span>
+						<i class="bx bxs-group"></i>
+						<span class="text">Team</span>
 					</a>
 				</li>
 			</ul>
@@ -76,44 +75,58 @@
 			<main>
 				<div class="head-title">
 					<div class="left">
-						<h1>My School</h1>
+						<h1>Team</h1>
 						<ul class="breadcrumb">
 							<li>
 								<a href="#">Dashboard</a>
 							</li>
 							<li><i class="bx bx-chevron-right"></i></li>
 							<li>
-								<a class="active" href="#">My School</a>
+								<a class="active" href="#">Team</a>
 							</li>
 						</ul>
 					</div>
-					<a
-						href="https://drive.google.com/drive/folders/1izlgoZNTvGBkUdc1RraKvAVUr-sDo3vh?usp=share_link"
-						target="_blank"
-						class="btn-download"
-					>
-						<i class="bx bxs-cloud-download"></i>
-						<span class="text">Download PDF</span>
-					</a>
 				</div>
-				<!-- IMAGE-->
-				<ul class="image-list">
-					{% for image in images %}
-					<li>
-						<div class="image-container">
-							<img
-								src="{{ url_for('static', filename='img/pics/' + image) }}"
-								alt=""
-							/>
-						</div>
-					</li>
-					{% endfor %}
-				</ul>
-				<!-- IMAGE-->
 			</main>
 			<!-- MAIN -->
 		</section>
 		<!-- CONTENT -->
+		<div class="person" style="--color: #782a2b">
+			<div class="container">
+				<div class="conianer-inner">
+					<div class="circle"></div>
+					<img src="{{ url_for('static', filename='img/1.png') }}" />
+				</div>
+			</div>
+			<div class="divider"></div>
+			<h1>Rosa Lewis</h1>
+			<p>Senior UX/UI Designer</p>
+		</div>
+
+		<div class="person" style="--color: #37375e">
+			<div class="container">
+				<div class="conianer-inner">
+					<div class="circle"></div>
+					<img src="{{ url_for('static', filename='img/1.png') }}" />
+				</div>
+			</div>
+			<div class="divider"></div>
+			<h1>John Willis</h1>
+			<p>Senior Full-Stack Developer</p>
+		</div>
+
+		<div class="person" style="--color: #3e6e7c">
+			<div class="container">
+				<div class="conianer-inner">
+					<div class="circle"></div>
+					<img src="{{ url_for('static', filename='img/1.png') }}" />
+				</div>
+			</div>
+			<div class="divider"></div>
+			<h1>Sandy Rogers</h1>
+			<p>Senior Product Manager</p>
+		</div>
+
 		<script src="{{ url_for('static', filename='script.js') }}"></script>
 	</body>
 </html>

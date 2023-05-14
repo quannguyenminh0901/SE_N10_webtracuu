@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatBot</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/logo.png') }}" />
+	<title>University Search</title>
     <!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
@@ -104,18 +105,14 @@
 								<div class="Chatbox" id="myForm">
   									<form action="" class="form-container">	
     								<h1>Chatbox</h1>
-
-    								<label for="msg"><b>Lời Nhắn</b></label>
+									
+    								<label for="msg"><b>Lời Nhắn</b>
+										<button type="button" class="btn nut-dong-chatbox" onclick="dongForm()">Đóng</button>
+									</label>
     								<textarea placeholder="Bạn hãy nhập lời nhắn.." name="msg" required></textarea>
 
     								<button type="submit" class="btn">Gửi</button>
-   									<button type="button" class="btn nut-dong-chatbox" onclick="dongForm()">Đóng</button>
-									
-							<div class="chat-message">
-								<span class="message-text">Xin chào! Tôi có thể giúp gì cho bạn?</span>
-								<span class="message-time">9:00 AM</span>
-							  </div>
-							  
+															  
 							  <div class="chat-message">
 								<span class="message-text">Tôi muốn biết về sản phẩm của bạn.</span>
 								<span class="message-time">9:02 AM</span>

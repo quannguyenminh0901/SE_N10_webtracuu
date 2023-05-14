@@ -6,7 +6,7 @@
 
 
 body {
-    background: #f6f5f7;
+    background: #82ece4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,8 +47,8 @@ a {
 
 button {
     border-radius: 20px;
-    border: 1px solid #FF4B2B;
-    background-color: #FF4B2B;
+    border: 1px solid #ffffff;
+    background-color: #2bbcff;
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
@@ -164,9 +164,9 @@ input {
 }
 
 .overlay {
-    background: #FF416C;
-    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-    background: linear-gradient(to right, #FF4B2B, #FF416C);
+    background: #93bada;
+    background: -webkit-linear-gradient(to right, #ff4901, #ff4901);
+    background: linear-gradient(to right, #ff4901, #ff4901);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
@@ -220,7 +220,7 @@ input {
 }
 
 .social-container a {
-    border: 1px solid #DDDDDD;
+    border: 1px solid #294ef3;
     border-radius: 50%;
     display: inline-flex;
     justify-content: center;

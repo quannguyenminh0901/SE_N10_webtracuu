@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, session, url_for
 from flask_sqlalchemy import SQLAlchemy
 import urllib.parse
 from PIL import Image
-import io, base64
+import io, base64, os
 
 app = Flask(__name__, template_folder='templates')
 app.secret_key = 'secretkey'
@@ -27,14 +27,8 @@ class TruongDH(db.Model):
     __tablename__ = 'truongdh'
     tenTruong = db.Column(db.String(255), unique=True, nullable=False)
     maTruong = db.Column(db.String(255), unique=True, nullable=False, primary_key=True)
-    linkaccess = db.Column(db.String(255), unique=True)
-
-#Define the Images model for SQLAlchemy
-class images(db.Model):
-    __tablename__ = 'images'
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(255), nullable=False)
-    image = db.Column(db.LargeBinary, nullable=False)
+    linkaccess = db.Column(db.String(255))
+    loaiTruong = db.Column(db.String(255))
     
 @app.route('/')
 def index():
@@ -48,7 +42,7 @@ def login():
         user = Users.query.filter_by(email=email, password=password).first()
         if user:
             DH = TruongDH.query.all()
-            DH = [{'tenTruong': dh.tenTruong, 'maTruong': dh.maTruong} for dh in DH]
+            DH = [{'tenTruong': dh.tenTruong, 'maTruong': dh.maTruong, 'linkaccess': dh.linkaccess} for dh in DH]
             session['DH'] = DH  # Lưu session của các trường ĐH cho user
             session['user'] = user.id
             return redirect(url_for('home'))
@@ -71,33 +65,6 @@ def register():
 
     return redirect('/')
 
-@app.route('/images')
-def images():
-    # query the image column from the image table
-    conn = db.engine.raw_connection()
-    cur = conn.cursor()
-    cur.execute("SELECT image FROM image")
-    images = cur.fetchall()
-    cur.close()
-    
-    # convert binary data to images
-    img_list = []
-    for img_data in images:
-        img_binary = io.BytesIO(img_data[0])
-        img = Image.open(img_binary)
-        img_list.append(img)
-
-    # convert images to base64 format for displaying on the webpage
-    img_src_list = []
-    for img in img_list:
-        buffer = io.BytesIO()
-        img.save(buffer, format="JPG")
-        img_str = base64.b64encode(buffer.getvalue()).decode()
-        img_src = f"data:image/jpg;base64,{img_str}"
-        img_src_list.append(img_src)
-
-    # pass the image sources to the template
-    return render_template('image.html', img_src_list=img_src_list)
 
 @app.route('/chat', methods=['GET', 'POST'])
 def chat():
@@ -105,11 +72,20 @@ def chat():
         return redirect(url_for('home'))
 
     DH = TruongDH.query.all()
-    DH = [{'tenTruong': dh.tenTruong, 'maTruong': dh.maTruong} for dh in DH]
+    DH = [{'tenTruong': dh.tenTruong, 'maTruong': dh.maTruong, 'linkaccess': dh.linkaccess} for dh in DH]
     session['DH'] = DH
 
     return render_template('chat.html', DH=DH)
 
+@app.route('/team', methods = ['GET','POST'])
+def team():
+    if request.method == 'POST':
+        return redirect(url_for('home'))
+    DH = TruongDH.query.all()
+    DH = [{'tenTruong': dh.tenTruong, 'maTruong': dh.maTruong, 'linkaccess': dh.linkaccess} for dh in DH]
+    session['DH'] = DH
+
+    return render_template('team.html', DH=DH)
 @app.route('/home')
 def home():
     if 'user' not in session:
@@ -118,12 +94,41 @@ def home():
     DH = session.get('DH')
     return render_template('home.html', DH=DH)
 
+@app.route('/image', methods=['GET', 'POST'])
+def image():
+    if request.method == 'POST':
+        return redirect(url_for('home'))
+
+    image_files = os.listdir('static/img/pics')
+    images = [file for file in image_files if file.endswith(('.png', '.jpg', '.jpeg'))]
+
+    DH = TruongDH.query.all()
+    DH = [{'tenTruong': dh.tenTruong, 'maTruong': dh.maTruong, 'linkaccess': dh.linkaccess} for dh in DH]
+    session['DH'] = DH
+    return render_template('image.html', DH=DH, images=images)
+
+
 @app.route('/logout')
 def logout():
     session.pop('user', None)
     session.pop('DH', None)  # Xóa session của các trường ĐH khi logout
     return redirect(url_for('index'))
 
+@app.route('/search', methods=['POST'])
+def search():
+    search_term = request.form['search_term']
+    DH = TruongDH.query.filter(TruongDH.tenTruong.like('%'+search_term+'%')).all()
+    DH = [{'tenTruong': dh.tenTruong, 'maTruong': dh.maTruong, 'linkaccess': dh.linkaccess} for dh in DH]
+    session['DH'] = DH
+    return redirect(url_for('home'))
+
+@app.route('/filter', methods=['POST'])
+def filter():
+    loaiTruong = request.form['loaiTruong']
+    DH = TruongDH.query.filter_by(loaiTruong=loaiTruong).all()
+    DH = [{'tenTruong': dh.tenTruong, 'maTruong': dh.maTruong, 'linkaccess': dh.linkaccess} for dh in DH]
+    session['DH'] = DH
+    return redirect(url_for('home'))
 
 if __name__ == '__main__':
     app.run(debug=True)
