@@ -9,6 +9,9 @@ linkaccess VARCHAR(50)
 
 -- sắp xếp theo mã trường
 select * from truongDH
+order by TenTruong ASC;
+
+select * from truongDH
 order by MaTruong ASC;
 
 CREATE TABLE Users (
@@ -24,19 +27,6 @@ CREATE TABLE Users (
   PRIMARY KEY (id)
 );
 
-
-create table images (
-id int not null auto_increment,
-name varchar(255) not null,
-image longblob not null,
-primary key(id)
-);
-INSERT INTO image (name, image) VALUES ('BKA', LOAD_FILE('C:\Lib\practice\html\project1\static\img\pics\BKA.png'));
-INSERT INTO image (name, image) VALUES ('BVH', LOAD_FILE('C:\Lib\practice\html\project1\static\img\pics\BVH.png'));
-INSERT INTO image (name, image) VALUES ('C01', LOAD_FILE('C:\Lib\practice\html\project1\static\img\pics\C01.png'));
-INSERT INTO image (name, image) VALUES ('CCM', LOAD_FILE('C:\Lib\practice\html\project1\static\img\pics\CCM.jpg'));
-INSERT INTO image (name, image) VALUES ('DCN', LOAD_FILE('C:\Lib\practice\html\project1\static\img\pics\DCN.png'));
-INSERT INTO image (name, image) VALUES ('DCQ', LOAD_FILE('C:\Lib\practice\html\project1\static\img\pics\DCQ.JPG'));
 
 
 

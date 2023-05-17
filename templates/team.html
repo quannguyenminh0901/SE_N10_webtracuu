@@ -11,7 +11,7 @@
 		<title>University Search</title>
 		<!-- Boxicons -->
 		<link
-			href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
 			rel="stylesheet"
 		/>
 		<!-- My CSS -->
@@ -26,7 +26,7 @@
 			<a href="#" class="brand">
 				<i class="bx bxs-book-add"></i>
 
-				<span class="text">Tra cứu thông tin</span>
+				<span class="text">UniSearch</span>
 			</a>
 			<ul class="side-menu top">
 				<li>
@@ -87,45 +87,50 @@
 						</ul>
 					</div>
 				</div>
+				<div class="table-container">
+					<div class="person" style="--color: #782a2b">
+						<div class="container">
+							<div class="conianer-inner">
+								<div class="circle"></div>
+								<img src="{{ url_for('static', filename='img/hoang.jpg') }}" />
+							</div>
+						</div>
+						<div class="divider"></div>
+						<h1>Bùi Trần Việt Hoàng</h1>
+						<h3>21013113</h3>
+						<p>Senior UX/UI Designer</p>
+					</div>
+
+					<div class="person" style="--color: #37375e">
+						<div class="container">
+							<div class="conianer-inner">
+								<div class="circle"></div>
+								<img src="{{ url_for('static', filename='img/cuoc.jpg') }}" />
+							</div>
+						</div>
+						<div class="divider"></div>
+						<h1>Dương Phúc Quốc</h1>
+						<h3>21010596</h3>
+						<p>Senior Full-Stack Developer</p>
+					</div>
+
+					<div class="person" style="--color: #3e6e7c">
+						<div class="container">
+							<div class="conianer-inner">
+								<div class="circle"></div>
+								<img src="{{ url_for('static', filename='img/quan.jpg') }}" />
+							</div>
+						</div>
+						<div class="divider"></div>
+						<h1>Nguyễn Minh Quân</h1>
+						<h3>21010617</h3>
+						<p>Senior Product Manager</p>
+					</div>
+				</div>
 			</main>
 			<!-- MAIN -->
 		</section>
 		<!-- CONTENT -->
-		<div class="person" style="--color: #782a2b">
-			<div class="container">
-				<div class="conianer-inner">
-					<div class="circle"></div>
-					<img src="{{ url_for('static', filename='img/1.png') }}" />
-				</div>
-			</div>
-			<div class="divider"></div>
-			<h1>Rosa Lewis</h1>
-			<p>Senior UX/UI Designer</p>
-		</div>
-
-		<div class="person" style="--color: #37375e">
-			<div class="container">
-				<div class="conianer-inner">
-					<div class="circle"></div>
-					<img src="{{ url_for('static', filename='img/1.png') }}" />
-				</div>
-			</div>
-			<div class="divider"></div>
-			<h1>John Willis</h1>
-			<p>Senior Full-Stack Developer</p>
-		</div>
-
-		<div class="person" style="--color: #3e6e7c">
-			<div class="container">
-				<div class="conianer-inner">
-					<div class="circle"></div>
-					<img src="{{ url_for('static', filename='img/1.png') }}" />
-				</div>
-			</div>
-			<div class="divider"></div>
-			<h1>Sandy Rogers</h1>
-			<p>Senior Product Manager</p>
-		</div>
 
 		<script src="{{ url_for('static', filename='script.js') }}"></script>
 	</body>

@@ -65,18 +65,6 @@ def register():
 
     return redirect('/')
 
-
-@app.route('/chat', methods=['GET', 'POST'])
-def chat():
-    if request.method == 'POST':
-        return redirect(url_for('home'))
-
-    DH = TruongDH.query.all()
-    DH = [{'tenTruong': dh.tenTruong, 'maTruong': dh.maTruong, 'linkaccess': dh.linkaccess} for dh in DH]
-    session['DH'] = DH
-
-    return render_template('chat.html', DH=DH)
-
 @app.route('/team', methods = ['GET','POST'])
 def team():
     if request.method == 'POST':

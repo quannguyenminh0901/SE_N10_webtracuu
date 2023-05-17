@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Boxicons -->
-	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 	<link rel="shortcut icon" href="{{ url_for('static', filename='img/logo.png') }}" />
@@ -19,7 +19,7 @@
 		<a href="#" class="brand">
 			<i class='bx bxs-book-add'></i>
 
-			<span class="text">Tra cứu thông tin</span>
+			<span class="text">UniSearch</span>
 		</a>
 		<ul class   ="side-menu top">
 			<li class="active">
@@ -32,12 +32,6 @@
 				<a href="{{url_for('image')}}">
 					<i class='bx bxs-image' ></i>
 					<span class="text">My School</span>
-				</a>
-			</li>
-			<li>
-				<a href="{{url_for('chat')}}" >
-					<i class='bx bxs-message-dots'></i>
-					<span class="text">Message</span>
 				</a>
 			</li>
 			<li>
@@ -63,8 +57,6 @@
 		</ul>
 	</section>
 	<!-- SIDEBAR -->
-
-
 
 	<!-- CONTENT -->
 	<section id="content">
@@ -114,7 +106,7 @@
 			<ul class="box-info">
 				<li>
 					<i class='bx bxs-school' ></i>
-					<span class="text">
+					<span class="text1">
 						<h3>92</h3>
 						<p>Trường Đại học & Học viện</p>
 					</span>
@@ -122,14 +114,14 @@
 				<li>
 					<i class='bx bxs-group' ></i>
 					<span class="text">
-						<h3>2834</h3>
+						<h3></h3>
 						<p>Người dùng đang trực tuyến</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bxs-dollar-circle' ></i>
-					<span class="text">
-						<h3>$2543</h3>
+					<span class="text2">
+						<h3 id="donate-value">$50</h3>
 						<p>Ủng hộ</p>
 					</span>
 				</li>
@@ -182,6 +174,66 @@
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
+	<!--CHATBOX-->
+	<div class="chatbox-wrapper">
+		<div class="chatbox-toggle">
+			<i class="bx bx-message-dots"></i>
+		</div>
+		<div class="chatbox-message-wrapper">
+			<div class="chatbox-message-header">
+				<div class="chatbox-message-profile">
+					<img
+						src="{{ url_for('static', filename='img/ai.jpg') }}"
+						alt=""
+						class="chatbox-message-image"
+					/>
+					<div>
+						<h4 class="chatbox-message-name">Linh biết tuốt</h4>
+						<p class="chatbox-message-status">offline</p>
+					</div>
+				</div>
+				<div class="chatbox-message-dropdown">
+					<i
+						class="bx bx-dots-vertical-rounded chatbox-message-dropdown-toggle"
+					></i>
+					<ul class="chatbox-message-dropdown-menu">
+						<li>
+							<a href="#">Search</a>
+						</li>
+						<li>
+							<a href="#">Report</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="chatbox-message-content">
+				<h4 class="chatbox-message-no-message">
+					You don't have message yet!
+				</h4>
+			</div>
+			<div class="chatbox-message-bottom">
+				<form action="#" class="chatbox-message-form">
+					<textarea
+						rows="1"
+						placeholder="Type message..."
+						class="chatbox-message-input"
+					></textarea>
+					<button type="submit" class="chatbox-message-submit">
+						<i class="bx bx-send"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!--CHATBOX-->
+	<!--ONTOP-->
+	<div id="scrollTopButtonContainer">
+		<button onclick="topFunction()" id="scrollTopButton" title="Go to top">
+			<i class='bx bxs-up-arrow'></i>
+		</button>
+	</div>
+	<!--ONTOP-->
 	<script src="{{ url_for('static', filename='script.js') }}"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 </html>
